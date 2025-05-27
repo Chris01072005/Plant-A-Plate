@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Plant a Plate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Fonts for variety -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green-dark: #328e6e;
+      --green-mid: #67ae6e;
+      --yellow: #90c67c;
+      --light: #e1eebc;
+      --border-radius: 20px;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--green-dark);
+      color: var(--light);
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+    .bg-fixed {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: var(--green-dark);
+      z-index: -1;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px 20px;
+      border: 8px solid var(--yellow);
+      border-radius: var(--border-radius);
+      background: rgba(50, 142, 110, 0.90);
+      box-shadow: 0 0 30px 0 rgba(50, 142, 110, 0.3);
+      position: relative;
+      margin-top: 60px;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto 30px auto;
+      width: 160px;
+      transition: transform 0.3s;
+      border-radius: 50%;
+      box-shadow: 0 4px 24px 0 rgba(144, 198, 124, 0.2);
+      background: #222;
+    }
+    .logo:hover {
+      transform: scale(1.07) rotate(-3deg);
+      box-shadow: 0 8px 32px 0 rgba(144, 198, 124, 0.4);
+    }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      text-align: center;
+      color: var(--light);
+      margin-bottom: 0.3em;
+      letter-spacing: 2px;
+      text-shadow: 1px 2px 8px var(--green-mid);
+    }
+    h2 {
+      font-family: 'Pacifico', cursive;
+      color: var(--yellow);
+      font-size: 2rem;
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 8px var(--green-mid);
+    }
+    .infographic-section {
+      margin-bottom: 2.5em;
+      padding: 20px;
+      background: rgba(225, 238, 188, 0.10);
+      border-radius: var(--border-radius);
+      border-left: 6px solid var(--yellow);
+      transition: background 0.3s, border-left 0.3s;
+    }
+    .infographic-section:hover {
+      background: rgba(144, 198, 124, 0.18);
+      border-left: 12px solid var(--yellow);
+    }
+    .scrolling-text {
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 10px;
+      scrollbar-color: var(--yellow) var(--green-dark);
+      scrollbar-width: thin;
+    }
+    .seed-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 1em;
+      margin-bottom: 1em;
+      justify-content: space-between;
+    }
+    .seed-card {
+      flex: 1 1 220px;
+      background: var(--yellow);
+      color: var(--green-dark);
+      border-radius: var(--border-radius);
+      padding: 18px;
+      margin-bottom: 10px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 2px 8px 0 rgba(50, 142, 110, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      cursor: pointer;
+      min-width: 180px;
+      max-width: 300px;
+    }
+    .seed-card:hover {
+      transform: scale(1.04) rotate(-2deg);
+      background: var(--light);
+      box-shadow: 0 6px 18px 0 rgba(50, 142, 110, 0.18);
+    }
+    .event-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5em;
+      font-family: 'Roboto', sans-serif;
+    }
+    .event-table th, .event-table td {
+      border: 2px solid var(--yellow);
+      padding: 12px 10px;
+      text-align: left;
+      background: rgba(144, 198, 124, 0.09);
+    }
+    .event-table th {
+      background: var(--yellow);
+      color: var(--green-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1em;
+    }
+    .event-table tr:hover td {
+      background: var(--light);
+      color: var(--green-dark);
+      transition: background 0.2s;
+    }
+    @media (max-width: 700px) {
+      .container { padding: 15px; }
+      .seed-list { flex-direction: column; }
+      .seed-card { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-fixed"></div>
+  <div class="container">
+    <!-- Use your logo image here -->
+    <img src="https://pplx-res.cloudinary.com/image/upload/v1748387087/user_uploads/8254978/e96307ae-6548-4150-83c1-86052443d88c/1000049278.jpg" alt="Plant a Plate Logo" class="logo">
+    <h1>Plant a Plate</h1>
+    <div class="infographic-section scrolling-text">
+      <h2>How to Plant Your Seed-Infused Plate</h2>
+      <ol style="font-size:1.1em;line-height:1.7;">
+        <li><b>Break</b> your used plate into smaller pieces after your event.</li>
+        <li><b>Choose a spot</b> with plenty of sunlight and loose, moist soil.</li>
+        <li><b>Bury</b> the plate pieces under 1/4 inch (0.6cm) of soil.</li>
+        <li><b>Water</b> gently but thoroughly. Keep the soil moist, not soggy.</li>
+        <li><b>Wait</b> for sprouts! Most seeds germinate in 7–21 days.</li>
+        <li><b>Care</b> for your seedlings by watering regularly and ensuring sunlight.</li>
+      </ol>
+      <p style="font-style:italic;margin-top:1em;">
+        These plates are made from natural fibers (like corn husk or pineapple crown) and embedded with seeds. They are 100% compostable and biodegradable, turning your celebration into new life for the planet.<br>
+        <span style="color:var(--yellow);font-weight:bold;">Tip:</span> Check your plate or event info for the specific seed mix inside!
+      </p>
+    </div>
+
+    <div class="infographic-section scrolling-text">
+      <h2>What's Growing Inside? Seed Varieties</h2>
+      <div class="seed-list">
+        <div class="seed-card">
+          <b>Herbs</b>
+          <ul>
+            <li>Chives</li>
+            <li>Cilantro</li>
+            <li>Dill</li>
+            <li>Fennel</li>
+            <li>Lemon Mint</li>
+            <li>Oregano</li>
+            <li>Parsley</li>
+            <li>Rosemary</li>
+            <li>Summer Savory</li>
+          </ul>
+        </div>
+        <div class="seed-card">
+          <b>Flowers</b>
+          <ul>
+            <li>Wildflower Mix</li>
+            <li>Poppies</li>
+            <li>Cosmos</li>
+            <li>Forget-me-not</li>
+            <li>Sunflower</li>
+            <li>Bee & Butterfly Friendly Mix</li>
+          </ul>
+        </div>
+        <div class="seed-card">
+          <b>Native Plants</b>
+          <ul>
+            <li>Milkweed</li>
+            <li>Coreopsis</li>
+            <li>Black-eyed Susan</li>
+            <li>Bluebonnet (TX)</li>
+            <li>California Poppy (CA)</li>
+            <li>Regional Wildflowers</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top:0.5em;">
+        <span style="color:var(--yellow);font-weight:bold;">Note:</span> Seed mixes can be customized for your region or event. Check with your supplier for details!
+      </p>
+    </div>
+
+    <div class="infographic-section scrolling-text">
+      <h2>Perfect for Every Occasion</h2>
+      <table class="event-table">
+        <tr>
+          <th>Event</th>
+          <th>Seed Options</th>
+          <th>Why Choose Plantable Plates?</th>
+        </tr>
+        <tr>
+          <td>Weddings, Birthdays, Conferences</td>
+          <td>Herbs, Flowers, Custom Mix</td>
+          <td>Eco-friendly favors, lasting memories, zero waste</td>
+        </tr>
+        <tr>
+          <td>Schools, Environmental Programs</td>
+          <td>Native Plants, Regional Wildflowers</td>
+          <td>Educational, supports pollinators, hands-on learning</td>
+        </tr>
+        <tr>
+          <td>Corporate Events</td>
+          <td>Custom Mix</td>
+          <td>Promotes sustainability, brand values, green gifting</td>
+        </tr>
+      </table>
+    </div>
+    <div class="infographic-section scrolling-text">
+      <h2>Why Plant a Plate?</h2>
+      <ul style="font-size:1.1em;line-height:1.7;">
+        <li><b>Sustainable:</b> Made from agricultural by-products like corn husk or pineapple crown, reducing waste and emissions.</li>
+        <li><b>Biodegradable:</b> Plates break down in weeks, even in landfill conditions.</li>
+        <li><b>Regenerative:</b> Embedded seeds sprout into herbs, flowers, or native plants, supporting local ecosystems and pollinators.</li>
+        <li><b>Memorable:</b> Each plate becomes a living reminder of your event.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
